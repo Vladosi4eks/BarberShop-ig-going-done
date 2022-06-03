@@ -1040,7 +1040,7 @@ textarea {
             flex-direction: row;
     height: 240px;
     width: 1170px;
-    background-color: none;
+    background: none;
   }
 }
 
@@ -1053,6 +1053,7 @@ textarea {
     background: -webkit-gradient(linear, left top, left bottom, from(#171A24), to(rgba(23, 26, 36, 0.2)));
     background: linear-gradient(180deg, #171A24 0%, rgba(23, 26, 36, 0.2) 100%);
     width: 585px;
+    height: 240px;
     padding-right: 40px;
     padding: 30px 30px;
   }
@@ -1061,6 +1062,7 @@ textarea {
 @media (min-width: 1280px) {
   .cost__list-second {
     width: 585px;
+    height: 240px;
     padding: 30px 30px;
     background: -webkit-gradient(linear, left top, left bottom, from(#090B13), to(rgba(9, 11, 19, 0.2)));
     background: linear-gradient(180deg, #090B13 0%, rgba(9, 11, 19, 0.2) 100%);
