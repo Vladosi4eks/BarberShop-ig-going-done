@@ -18,7 +18,7 @@ body {
   letter-spacing: 0.02em;
   background-color: var(--white-color);
   color: var(--text-color);
-  min-width: 480px;
+  width: 480px;
   width: 100%;
 }
 
@@ -648,8 +648,10 @@ p {
   }
 }
 
-.svg-map {
-  margin-bottom: 25px;
+@media (min-width: 768px) {
+  .svg-map {
+    margin-bottom: 25px;
+  }
 }
 
 textarea {
@@ -1022,7 +1024,12 @@ textarea {
   margin-bottom: 50px;
   width: 418px;
   height: 440px;
-  padding: 30px 30px;
+}
+
+@media (max-width: 767.98px) {
+  .cost__list {
+    padding: 30px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1279.98px) {

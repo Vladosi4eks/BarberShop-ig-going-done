@@ -153,7 +153,9 @@
 }
 
 .svg-map {
-    margin-bottom: 25px;
+    @include mq(tab) {
+        margin-bottom: 25px;
+    }
 }
 
 .label {}
