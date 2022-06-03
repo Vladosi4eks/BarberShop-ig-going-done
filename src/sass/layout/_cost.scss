@@ -60,7 +60,7 @@
         width: 418px;
         height: 440px;
         @include mq(tab-only) {
-            padding: 30px 40px;
+            // padding: 30px 40px;
             width: 690px;
         }
         @include mq(desk) {
