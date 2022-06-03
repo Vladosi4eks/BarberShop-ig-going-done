@@ -1,0 +1,114 @@
+.cost {
+    text-align: center;
+    & .button {
+        padding: 12px 20px;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 1.33;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+    }
+    background-image: url(../images/cost/cost-480@1x.png),
+    linear-gradient( var(--background-color), var(--background-color));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include mq(mob-only) {
+        min-width: 480px;
+        width: 100%;
+        height: 826px;
+    }
+    @include mq(tab-only) {
+        min-width: 480px;
+        width: 100%;
+        height: 826px;
+    }
+    @include mq(retina) {
+        background-image: url(../images/cost/cost-480@2x.png), linear-gradient( var(--background-color), var(--background-color));
+    }
+    @include mq(tab) {
+        background-image: url(../images/cost/cost-768@1x.png), linear-gradient(var(--background-color), var(--background-color));
+        background-size: cover;
+        height: 858px;
+        @include mq(retina) {
+            background-image: url(../images/cost/cost-768@2x.png), linear-gradient( var(--background-color), var(--background-color));
+        }
+    }
+    @include mq(desk) {
+        background-image: url(../images/cost/cost-1280@1x.png), linear-gradient( var(--background-color), var(--background-color));
+        background-size: 1280px;
+        height: 718px;
+        @include mq(retina) {
+            background-image: url(../images/cost/cost-1280@2x.png), linear-gradient( var(--background-color), var(--background-color));
+        }
+    }
+    &__title {
+        margin-bottom: 44px;
+        font-family: 'Raleway';
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 1.167;
+        letter-spacing: 0.05em;
+        color: var(--white-color);
+        text-align: left;
+    }
+    &__list {
+        background: linear-gradient(180deg, #171A24 0%, rgba(23, 26, 36, 0.2) 100%);
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+        width: 418px;
+        height: 440px;
+        @include mq(tab-only) {
+            padding: 30px 40px;
+            width: 690px;
+        }
+        @include mq(desk) {
+            flex-direction: row;
+            height: 240px;
+            width: 1170px;
+            background-color: none;
+        }
+        &-first {
+            padding-bottom: 20px;
+            @include mq(desk) {
+                background: linear-gradient(180deg, #171A24 0%, rgba(23, 26, 36, 0.2) 100%);
+                width: 585px;
+                padding-right: 40px;
+                padding: 30px 30px;
+            }
+        }
+        &-second {
+            @include mq(desk) {
+                width: 585px;
+                padding: 30px 30px;
+                background: linear-gradient(180deg, #090B13 0%, rgba(9, 11, 19, 0.2) 100%);
+            }
+        }
+    }
+    &__item {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 2.14;
+        letter-spacing: 0.02em;
+        color: var(--gray-color);
+        max-width: inherit;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        @include mq(tab) {
+            font-size: 18px;
+            line-height: 1.67;
+        }
+    }
+}
+
+.line {
+    height: 1px;
+    background-color: rgba(157, 164, 189, 0.12);
+    flex-grow: 1;
+    margin: 0 6px;
+}

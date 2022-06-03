@@ -2,10 +2,10 @@
     "name": "parcel-project-template",
     "version": "2.0.0",
     "description": "",
-    "homepage": "https://Vladosi4eks.github.io/testing-git",
+    "homepage": "https://Vladosi4eks/BarberShop-ig-going-done",
     "scripts": {
         "dev": "parcel src/*.html",
-        "build": "parcel build src/*.html --public-url /testing-git/"
+        "build": "parcel build src/*.html --public-url /BarberShop-ig-going-done/"
     },
     "repository": {
         "type": "git",

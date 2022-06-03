@@ -1,0 +1,103 @@
+.album {
+    // display: flex;
+    // flex-wrap: wrap;
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item {
+        @include mq(mob-only) {
+            &:not(:last-child) {
+                margin-bottom: 30px;
+            }
+        }
+        &:nth-child(-n +2) {
+            @include mq(tab) {
+                margin-bottom: 30px;
+            }
+            @include mq(desk) {
+                margin-bottom: 0px;
+            }
+        }
+        &:not(:nth-child(2n)) {
+            @include mq(tab) {
+                margin-right: 30px;
+            }
+            @include mq(desk) {
+                margin-right: 0px;
+            }
+        }
+        & img {
+            @include mq(desk) {
+                height: 360px;
+                width: 270px;
+            }
+        }
+        @include mq(desk) {
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
+    }
+    &__img {}
+    &__container {
+        display: inline-flex;
+        &::before {
+            content: " ";
+            display: inline-flex;
+            margin-top: 10px;
+            height: 1px;
+            width: 60px;
+            background: var(--title-color);
+            margin-right: 20px;
+        }
+    }
+    &__subtitle {
+        margin-bottom: 44px;
+        font-weight: 600;
+        font-size: 11px;
+        line-height: 1.91;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--black-color);
+    }
+}
+
+// .container-subtitle {
+//     display: inline-flex;
+//     &::before {
+//         content: " ";
+//         display: inline-flex;
+//         margin-top: 10px;
+//         height: 1px;
+//         width: 60px;
+//         background: var(--title-color);
+//         margin-right: 20px;
+//     }
+// }
+// .album {
+//     &__container {
+//         display: inline-flex;
+//     }
+//     &__subtitle {
+//         margin-bottom: 44px;
+//         font-weight: 600;
+//         font-size: 11px;
+//         line-height: 1.91;
+//         letter-spacing: 0.1em;
+//         text-transform: uppercase;
+//         color: var(--black-color);
+//         &::before {
+//             content: " ";
+//             display: inline-flex;
+//             margin-top: 10px;
+//             height: 1px;
+//             width: 60px;
+//             background: var(--title-color);
+//             margin-right: 20px;
+//         }
+//     }
+// }
+.container {}
+
+.subtitle {}

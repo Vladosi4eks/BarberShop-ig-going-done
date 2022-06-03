@@ -1,0 +1,78 @@
+.differences {
+    @include mq(desk) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        justify-content: space-evenly;
+    }
+    &-block {
+        @include mq(tab) {
+            width: 500px;
+        }
+    }
+    &__title {
+        font-family: 'Raleway';
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 1.167;
+        letter-spacing: 0.05em;
+        color: var(--black-color);
+        margin-bottom: 20px;
+    }
+    &__text {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.67;
+        letter-spacing: 0.02em;
+        color: var(--text-color);
+        margin-bottom: 44px;
+    }
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 450px;
+        @include mq(tab) {
+            margin-left: auto;
+            justify-content: end;
+        }
+    }
+    &__item {
+        background-color: var(--master-color);
+        padding: 20px 35px;
+        width: 193px;
+        height: 133px;
+        &:nth-child(2) {
+            margin-left: 30px;
+            margin-top: 35px;
+        }
+        &:nth-child(4n) {
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+    }
+    &__amount {
+        display: flex;
+        justify-content: center;
+        align-items: last baseline;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 1.357;
+        text-align: center;
+        letter-spacing: 0.05em;
+        color: var(--black-color);
+        & span {
+            color: var(--skill-color);
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 1.375;
+            text-align: center;
+        }
+    }
+    &__info {
+        font-weight: 600;
+        font-size: 11px;
+        line-height: 1.364;
+        text-align: center;
+        color: var(--black-color);
+    }
+}

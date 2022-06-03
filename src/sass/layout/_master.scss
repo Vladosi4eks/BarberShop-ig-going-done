@@ -1,0 +1,85 @@
+.master {
+    background-color: var(--master-color);
+    &__title {
+        font-family: 'Raleway';
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 1.167;
+        letter-spacing: 0.05em;
+        color: var(--black-color);
+        margin-bottom: 44px;
+        text-align: center;
+        @include mq(desk) {
+            text-align: start;
+        }
+    }
+    & .subtitle {
+        text-align: center;
+    }
+    @include mq(tab-only) {
+        width: 418px;
+        display: flex;
+        justify-content: center;
+    }
+    &__list {
+        text-align: center;
+        width: 418px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        @include mq(tab) {
+            width: 450px;
+        }
+        @include mq(desk) {
+            width: 370px;
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 64px;
+        }
+        @include mq(desk) {
+            &:not(:last-child) {
+                margin-right: 30px;
+                margin-bottom: 0px;
+            }
+        }
+    }
+    &__img {
+        margin-bottom: 30px;
+        @include mq(desk) {
+            width: 370px;
+            height: 346px;
+        }
+    }
+    &__name {
+        margin-bottom: 8px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.39;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: var(--black-color);
+    }
+    &__text {
+        margin-bottom: 30px;
+        ;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 1.357;
+        text-align: center;
+        letter-spacing: 0.02em;
+        color: var(--skill-color);
+    }
+    &__soc {}
+}
+
+.blocks {}
+
+.obertka {
+    @include mq(tab-only) {
+        width: 418px;
+    }
+}
