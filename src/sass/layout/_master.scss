@@ -1,5 +1,7 @@
 .master {
     background-color: var(--master-color);
+    display: flex;
+    justify-content: center;
     &__title {
         font-family: 'Raleway';
         font-weight: 700;
@@ -17,7 +19,7 @@
         text-align: center;
     }
     @include mq(tab-only) {
-        width: 418px;
+        min-width: 418px;
         display: flex;
         justify-content: center;
     }

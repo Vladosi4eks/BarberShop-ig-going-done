@@ -1,7 +1,12 @@
 .bottom {
     &.container {
         margin: 0px;
-        padding: 84px 0px 0px 0px;
+        @include mq(mob-only) {
+            padding: 84px 0px 0px 0px;
+        }
+        @include mq(tab-only) {
+            padding: 84px 0px 0px 0px;
+        }
         @include mq(desk) {
             padding: 0px 0px 0px 0px;
         }

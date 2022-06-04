@@ -6,17 +6,36 @@
     @include mq(tab) {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
     &__list {
-        // transform: rotate(-90deg);
-        margin-bottom: 100px;
+        transform: rotate(-90deg);
+        display: flex;
+        align-items: center;
+        &::before {
+            content: "";
+            display: block;
+            height: 60px;
+            width: 1px;
+            background: var(--title-color);
+            transform: rotate(-90deg);
+            margin-right: 70px;
+        }
     }
     &__item {
         &:not(:last-child) {
-            margin-bottom: 100px;
+            margin-right: 40px;
         }
         & a {
-            transform: rotate(-90deg);
+            font-weight: 600;
+            font-size: 11px;
+            line-height: 1.364;
+            letter-spacing: 0.2em;
+            color: var(--black-color);
+            &:hover,
+            &:focus {
+                color: var(--skill-color);
+            }
         }
         // &:first-child::before {
         //     content: " ";
@@ -40,22 +59,7 @@
     justify-content: center;
 }
 
-.left-soc {
-    display: inline-flex;
-    flex-direction: column-reverse;
-    width: 85px;
-    &::before {
-        content: " ";
-        display: inline-flex;
-        height: 1px;
-        width: 60px;
-        background: var(--title-color);
-        margin-right: 20px;
-        margin-left: 13px;
-        transform: rotate(-90deg);
-        margin-bottom: 40px;
-    }
-}
+.left-soc {}
 
 .menu-header {
     &__list {}
@@ -158,8 +162,14 @@
     justify-content: center;
     // padding: 0px 0px;
     min-width: 480px;
-    padding: 0px 39px;
     width: 100%;
+    overflow: hidden;
+    @include mq(tab) {
+        padding: 0px 39px;
+    }
+    @include mq(desk) {
+        width: 1280px;
+    }
 }
 
 .header-osnova {
@@ -201,17 +211,27 @@
 }
 
 .information {
+    position: absolute;
     min-width: 306px;
     width: 100%;
     @include mq(mob) {
         width: 306px;
+        top: 50%;
+        left: 31px;
+        transform: translateY(-50%);
     }
-    @include mq(tab) {
+    @include mq(tab-only) {
         width: 349px;
+        top: 50%;
+        left: 71px;
+        transform: translateY(-50%);
     }
     @include mq(desk) {
         width: 445px;
-        margin-left: 76px;
+        // margin-left: 76px;
+        top: 50%;
+        left: 96px;
+        transform: translateY(-50%);
     }
     // &__subtitle {
     //     display: flex;
@@ -289,21 +309,29 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    @include mq(tab) {
+        justify-content: center;
+    }
     @include mq(desk) {
         justify-content: space-between;
     }
 }
 
 .perekluchatel {
+    position: absolute;
     display: none;
     margin-left: 103px;
     margin-bottom: 50px;
     @include mq(tab) {
         display: block;
+        top: 50%;
+        right: 37px;
+        transform: translateY(-50%);
     }
     @include mq(desk) {
-        margin-right: 52px;
+        top: 50%;
+        right: 52px;
+        transform: translateY(-50%);
     }
     &_button {
         display: flex;

@@ -18,13 +18,13 @@ body {
   letter-spacing: 0.02em;
   background-color: var(--white-color);
   color: var(--text-color);
-  width: 480px;
+  min-width: 480px;
   width: 100%;
 }
 
 @media (min-width: 768px) {
   body {
-    width: 768px;
+    min-width: 768px;
     margin: 0px auto;
   }
 }
@@ -109,7 +109,7 @@ p {
 
 @media (min-width: 1280px) {
   .container {
-    min-width: 1280px;
+    width: 1280px;
     width: 100%;
     padding: 130px 55px;
   }
@@ -205,24 +205,29 @@ p {
 }
 
 .mobile-menu {
-  display: none;
   z-index: 10;
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 347px;
   padding-left: 49px;
-  padding-top: 118px;
+  padding-top: 100px;
   font-size: 20px;
   height: 796px;
   background-color: var(--white-color);
-  -webkit-transform: translateX(39%);
-          transform: translateX(39%);
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 500ms linear;
+  transition: -webkit-transform 500ms linear;
+  transition: transform 500ms linear;
+  transition: transform 500ms linear, -webkit-transform 500ms linear;
 }
 
 .mobile-menu.is-open {
   display: block;
   border-bottom: 1px solid rgba(33, 33, 33, 0.1);
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
 }
 
 @media (min-width: 768px) {
@@ -666,6 +671,13 @@ textarea {
       flex-wrap: wrap;
 }
 
+@media (min-width: 768px) and (max-width: 1279.98px) {
+  .album__list {
+    width: 690px;
+    margin: 0 auto;
+  }
+}
+
 @media (max-width: 767.98px) {
   .album__item:not(:last-child) {
     margin-bottom: 30px;
@@ -743,7 +755,18 @@ textarea {
 
 .bottom.container {
   margin: 0px;
-  padding: 84px 0px 0px 0px;
+}
+
+@media (max-width: 767.98px) {
+  .bottom.container {
+    padding: 84px 0px 0px 0px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279.98px) {
+  .bottom.container {
+    padding: 84px 0px 0px 0px;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -1021,6 +1044,7 @@ textarea {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 0 auto;
   margin-bottom: 50px;
   width: 418px;
   height: 440px;
@@ -1332,20 +1356,48 @@ textarea {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 
 .left-header__list {
-  margin-bottom: 100px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.left-header__list::before {
+  content: "";
+  display: block;
+  height: 60px;
+  width: 1px;
+  background: var(--title-color);
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  margin-right: 70px;
 }
 
 .left-header__item:not(:last-child) {
-  margin-bottom: 100px;
+  margin-right: 40px;
 }
 
 .left-header__item a {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.364;
+  letter-spacing: 0.2em;
+  color: var(--black-color);
+}
+
+.left-header__item a:hover, .left-header__item a:focus {
+  color: var(--skill-color);
 }
 
 .left-header__logo {
@@ -1360,32 +1412,6 @@ textarea {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.left-soc {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
-  width: 85px;
-}
-
-.left-soc::before {
-  content: " ";
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  height: 1px;
-  width: 60px;
-  background: var(--title-color);
-  margin-right: 20px;
-  margin-left: 13px;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  margin-bottom: 40px;
 }
 
 .header-nav {
@@ -1512,8 +1538,20 @@ textarea {
       -ms-flex-pack: center;
           justify-content: center;
   min-width: 480px;
-  padding: 0px 39px;
   width: 100%;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding: 0px 39px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header {
+    width: 1280px;
+  }
 }
 
 .header-osnova {
@@ -1577,6 +1615,7 @@ textarea {
 }
 
 .information {
+  position: absolute;
   min-width: 306px;
   width: 100%;
 }
@@ -1584,19 +1623,30 @@ textarea {
 @media (min-width: 480px) {
   .information {
     width: 306px;
+    top: 50%;
+    left: 31px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1279.98px) {
   .information {
     width: 349px;
+    top: 50%;
+    left: 71px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 
 @media (min-width: 1280px) {
   .information {
     width: 445px;
-    margin-left: 76px;
+    top: 50%;
+    left: 96px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 
@@ -1680,9 +1730,14 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .center {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 @media (min-width: 1280px) {
@@ -1694,6 +1749,7 @@ textarea {
 }
 
 .perekluchatel {
+  position: absolute;
   display: none;
   margin-left: 103px;
   margin-bottom: 50px;
@@ -1702,12 +1758,19 @@ textarea {
 @media (min-width: 768px) {
   .perekluchatel {
     display: block;
+    top: 50%;
+    right: 37px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 
 @media (min-width: 1280px) {
   .perekluchatel {
-    margin-right: 52px;
+    top: 50%;
+    right: 52px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
   }
 }
 
@@ -1744,6 +1807,12 @@ textarea {
 
 .master {
   background-color: var(--master-color);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .master__title {
@@ -1769,7 +1838,7 @@ textarea {
 
 @media (min-width: 768px) and (max-width: 1279.98px) {
   .master {
-    width: 418px;
+    min-width: 418px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

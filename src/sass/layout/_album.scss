@@ -4,6 +4,10 @@
     &__list {
         display: flex;
         flex-wrap: wrap;
+        @include mq(tab-only) {
+            width: 690px;
+            margin: 0 auto;
+        }
     }
     &__item {
         @include mq(mob-only) {

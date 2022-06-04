@@ -4,10 +4,10 @@ body {
     letter-spacing: 0.02em;
     background-color: var(--white-color);
     color: var(--text-color);
-    width: 480px;
+    min-width: 480px;
     width: 100%;
     @include mq(tab) {
-        width: 768px;
+        min-width: 768px;
         margin: 0px auto;
     }
     @include mq(desk) {
