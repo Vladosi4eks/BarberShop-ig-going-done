@@ -42,5 +42,16 @@
         line-height: 1.364;
         letter-spacing: 0.2em;
         color: var(--black-color);
+        & a {
+            font-weight: 600;
+            font-size: 11px;
+            line-height: 1.364;
+            letter-spacing: 0.2em;
+            color: var(--black-color);
+            &:hover,
+            &:focus {
+                color: var(--skill-color);
+            }
+        }
     }
 }
